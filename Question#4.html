@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+  <head>
+     <title>Q4.html </title>
+    <meta charset = "utf-8" />
+	<script>
+	function StringStats(sentence){
+	var str=sentence;
+	var s=str.split(" ");
+  var text=[];
+    var result=[];
+   for(var i=0;i<s.length;i++){
+	 var patt=/[aeiou]/ig;
+     if(s[i].match(patt)==null)
+	 result[i]=""; 
+     else
+     result[i]=s[i].match(patt);
+	 if(result[i].length==1)
+	 text+=s[i]+" contains "+result[i].length+" vowel<br>";
+	 else
+	  text+=s[i]+" contains "+result[i].length+" vowels<br>";
+	}
+   
+	document.write("String Statistics:<br>"+text);
+	}
+</script>
+
+ 	</head>
+  <body>
+   
+	<script type="text/javascript">
+    StringStats("The word rhythms doesn't contain any vowels");
+    </script>
+	
+	</body>
+</html>
+	

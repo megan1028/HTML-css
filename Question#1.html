@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="utf-8"> 
+	<title> ATM withdraw</title>
+  </head>
+  <body>
+   <form name="ATM" action="" >
+    <input id="demo" type="text" name="amount" placeholder="Enter withdrawl amount"> 
+    <button type="button" onclick="validateAmount()">Submit</button>
+    </form>
+    <script>
+	var text,balance;
+	 function validateAmount(){
+	  x=document.getElementById("demo").value;
+      if(isNaN(x))
+	 {
+	 alert("Please enter numeric value");
+	  }
+	 else
+	  withdrawAmount();
+	 }
+	 function withdrawAmount(){
+	    if(x%20!=0 && x<500)
+		  text="Not multiple of 20:\"Incorrect withdrawal amount\"";
+		if(x>500)
+		 	text="\"Insufficient funds\"";
+		 if(x%20==0 && x<500){
+		 balance=500-x-0.5;
+		  text="\"Successful transaction! \n Current Balance is: " + balance;
+		 }
+		alert( text);
+    }
+	</script>
+   </body>
+   </html>
+   

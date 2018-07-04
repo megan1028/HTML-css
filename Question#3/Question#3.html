@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+  <head>
+     <script src="plotly-latest.min.js"></script>
+    <title>Q3.html </title>
+    <meta charset = "utf-8" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+  <form>
+    <table>
+	<tr class="first">
+	  <td><label>Input String</label></td>
+	  <td ><input id="demo1" type="text" name="String"></td>
+	</tr>
+	<tr>
+	<td><label>Input Word</label></td>
+	<td ><input  id="demo2" type="text" name="Word"></td>
+	</tr>
+	<tr class="first" >
+	<td colspan='2'><button type="button" onclick="myFunction()">Plot Histogram</button></td>
+	</table>
+	
+	</form>
+	<p id="myDiv"></p>
+	<script>
+	function myFunction(){
+	 var i=0,j=0;
+	 var S=document.getElementById("demo1").value;
+	 var word=document.getElementById("demo2").value;
+	 var ch;
+	 var  x="";
+	 for(i=0;i<word.length;i++)
+	   {  ch=word.substring(i,i+1);
+		 for(j=0;j<S.length;j++){
+		  if(ch==S.substring(j,j+1))
+            x+=	S.substring(j,j+1);	
+           }
+           }
+		      x=x.split("");
+		    var hisElements={
+             x:x,
+             type:'histogram',
+              marker:{color:'#FF300',},};
+          var layout={
+             bargap:0.05,
+              bargroupgap:0.5,
+              barmode:"overlay",
+              title:"Histogram",
+              xaxis:{title:"Values",},
+               yaxis:{title:"Count"},
+             };			   
+		var data=[hisElements];
+	 
+		Plotly.newPlot('myDiv', data,layout);
+     	
+      
+	 }
+	 
+	</script>
+	</body>
+	</html>
